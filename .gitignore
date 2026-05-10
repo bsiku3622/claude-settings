@@ -1,0 +1,20 @@
+# Allow-list approach: ignore everything, then unignore what we share.
+/*
+!/.gitignore
+!/CLAUDE.md
+!/settings.json
+!/skills/
+!/hooks/
+!README.md
+!LICENSE
+
+# Inside hooks/, keep scripts only.
+hooks/*
+!hooks/*.sh
+
+
+# Never commit local settings overrides.
+settings.local.json
+
+# OS / editor noise
+.DS_Store
