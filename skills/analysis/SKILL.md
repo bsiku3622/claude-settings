@@ -1,6 +1,6 @@
 ---
 name: analysis
-description: Root cause analysis. Investigate code or system issues methodically before proposing a fix.
+description: Root cause analysis for concrete bugs or system issues. Investigate methodically before proposing a fix. For open-ended design questions or decisions, use /think instead.
 ---
 
 **Usage:** /analysis [problem]

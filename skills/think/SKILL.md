@@ -1,6 +1,6 @@
 ---
 name: think
-description: Deep reasoning. Think through a problem systematically before answering.
+description: Deep reasoning for open questions, design tradeoffs, or decisions where multiple approaches are plausible. For debugging concrete bugs or system issues, use /analysis instead.
 ---
 
 **Usage:** /think [question]

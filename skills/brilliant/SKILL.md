@@ -12,6 +12,7 @@ Don't settle for the first solution that comes to mind. Push further.
 - Ask yourself "is there a better way?" before presenting anything.
 - If the obvious answer is the best, explain why after considering alternatives.
 - Think holistically — the best solution fits the broader context, not just the immediate problem.
+- Brilliance is fit, not novelty. For a simple problem, the simple answer often IS the brilliant one. Do not invent complexity to look creative.
 
 If no problem is provided as an argument, infer the topic from the conversation context.
 
