@@ -13,6 +13,7 @@ description: Save a report as a Markdown file in /Users/baeks/Documents/Claude R
 - 보고서 형식 — 제목(H1), 개요, 본문 섹션(H2/H3), 결론 순서로 구성
 - 사실과 의견을 구분해서 서술
 - 필요 시 표, 코드 블록, 리스트 사용
+- 사용자가 요청한 주제에 집중하되, 관련된 중요한 정보나 배경도 포함
 
 ## 파일명 생성
 
