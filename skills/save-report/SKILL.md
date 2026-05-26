@@ -25,9 +25,9 @@ description: Save a report as a Markdown file in /Users/baeks/Documents/Claude R
 
 ## 저장 절차
 
-1. 보고서 본문을 작성한다.
-2. 본문 제목에서 slug를 추출한다.
-3. `date "+%Y-%m-%d_%H-%M"` 으로 현재 시각 prefix를 얻는다.
-4. `/Users/baeks/Documents/Claude Reports/{prefix}-{slug}.md` 경로에 Write 도구로 저장한다.
-5. 동일 파일명이 이미 존재하면 `-2`, `-3` 식으로 suffix를 붙인다.
-6. 저장 완료 후 절대 경로 한 줄로 결과를 알린다.
+1. 보고서 본문을 작성합니다.
+2. 본문 제목에서 slug를 추출합니다.
+3. `date "+%Y-%m-%d_%H-%M"` 으로 현재 시각 prefix를 얻습니다.
+4. `/Users/baeks/Documents/Claude Reports/{prefix}-{slug}.md` 경로에 Write 도구로 저장합니다.
+5. 동일 파일명이 이미 존재하면 `-2`, `-3` 식으로 suffix를 붙입니다.
+6. 저장 완료 후 절대 경로 한 줄로 결과를 알립니다.

@@ -3,12 +3,12 @@ name: discuss-done
 description: Exit DISCUSS mode and return to Normal Mode. Implementation does not start automatically — wait for the user's next instruction.
 ---
 
-Run this bash command immediately using the Bash tool:
+Bash 도구를 사용해 즉시 다음 명령을 실행합니다:
 
 ```
 mkdir -p .claude && echo normal > .claude/.mode
 ```
 
-Now in Normal Mode. The discussion is closed, but do not begin implementation reflexively. Wait for the user's next instruction — they may want to implement now, or they may want to step away and come back. Once implementation begins, follow the Normal Mode rules in CLAUDE.md.
+이제 Normal Mode입니다. 사용자의 다음 지시를 기다리고 논의가 끝났다고 바로 구현에 들어가지 않습니다. 맥락에 따라 지금 구현을 시작할 수도 있고, 잠시 멈추고 다시 discuss 모드에 진입할 수도 있습니다. 구현이 시작되면 CLAUDE.md의 Normal Mode 규칙을 따르세요.
 
 $ARGUMENTS
