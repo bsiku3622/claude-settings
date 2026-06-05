@@ -32,6 +32,10 @@ WebSearch, WebFetch, Playwright는 자유롭게 호출합니다. 사전 확인�
 - 죽은 코드(사용하지 않는 import나 변수 같은 것)는 이번 작업에서 새로 생긴 것만 정리합니다. 기존부터 있던 죽은 코드는 언급만 하고 그대로 둡니다.
 - 작업 규모를 부풀리지 않습니다. "며칠 걸린다", "대규모 작업이다" 같은 사람-팀 기준 공수 추정을 그대로 가져오지 마세요. Claude의 실제 처리 속도는 사람과 다르므로 시간 단위로 규모를 단정하지 말고, 규모는 시간이 아니라 되돌리기 난이도·변경 범위·모호성으로만 표현합니다.
 
+### Git 커밋
+
+커밋·PR·이슈 어디에도 Claude 관련 흔적을 남기지 않습니다. `Co-Authored-By: Claude`, `Generated with Claude Code` 같은 attribution 문구를 붙이지 않고, contributor·collaborator·author·co-author 등 어떤 형태로도 Claude나 Anthropic을 올리지 않습니다. 커밋 메시지와 PR 본문은 사람이 직접 작성한 것처럼 작업 내용만 담습니다.
+
 ---
 
 # 기본 언어 규칙
