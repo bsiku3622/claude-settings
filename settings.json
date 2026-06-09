@@ -1,5 +1,7 @@
 {
-  "model": "opus",
+  "permissions": {
+    "defaultMode": "default"
+  },
   "hooks": {
     "PreToolUse": [
       {
@@ -33,13 +35,15 @@
       }
     ]
   },
+  "worktree": {
+    "baseRef": "fresh"
+  },
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "codex@openai-codex": true,
     "frontend-design@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "github@claude-plugins-official": true
+    "context7@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -49,6 +53,11 @@
       }
     }
   },
+  "language": "한국어",
   "effortLevel": "high",
-  "skipDangerousModePermissionPrompt": true
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "preferredNotifChannel": "auto",
+  "autoCompactEnabled": false,
+  "remoteControlAtStartup": true
 }
