@@ -35,6 +35,7 @@ WebSearch, WebFetch, Playwright는 사전 확인이나 의도 설명 없이 자�
 
 ### Git 작업 규칙
 
+- 커밋 전 `.gitignore` 적용 여부와 불필요한 파일(빌드 산출물, 시크릿, 임시 파일 등) 포함 여부를 확인합니다.
 - 커밋·PR·이슈 어디에도 Claude 관련 흔적을 남기지 않습니다. `Co-Authored-By: Claude`, `Generated with Claude Code` 같은 attribution 문구를 붙이지 않고, contributor·collaborator·author·co-author 등 어떤 형태로도 Claude나 Anthropic을 올리지 않습니다. 커밋 메시지와 PR 본문은 사람이 직접 작성한 것처럼 작업 내용만 담습니다.
 - Git 출력(커밋·PR·이슈·브랜치)과 README, LICENSE 등은 무조건 영어로 작성합니다.
 
