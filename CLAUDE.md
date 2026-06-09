@@ -42,9 +42,13 @@ WebSearch, WebFetch, Playwright는 사전 확인이나 의도 설명 없이 자�
 
 Conventional Commits 기반.
 - 형식: `type: description`
-— description: 50자 이내, 소문자 명령형 동사 시작, 마침표 없음 (`add`, `fix`, `update`, `remove` 등)
+- description: 50자 이내, 소문자 명령형 동사 시작, 마침표 없음 (`add`, `fix`, `update`, `remove` 등)
 
 `feat` 새 기능 · `fix` 버그 수정 · `refactor` 코드 개선 · `chore` 유지보수 · `release` 버전 릴리즈 · `docs` 문서 · `style` 포맷 · `test` 테스트 · `perf` 성능 · `ci` CI/CD
+
+#### 버전 표기
+
+Semantic Versioning (semver) 기반: `x.y.z` — 정식 릴리즈, `x.y.z-alpha` / `x.y.z-beta` / `x.y.z-rc.n` — pre-release. 순서: alpha < beta < rc < 정식.
 
 #### 브랜치 전략
 
