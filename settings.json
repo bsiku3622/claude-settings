@@ -54,10 +54,10 @@
     }
   },
   "language": "한국어",
-  "effortLevel": "high",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "auto",
   "autoCompactEnabled": false,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "model": "sonnet"
 }
