@@ -29,29 +29,48 @@ The mode is stored in `.claude/.mode` (per project) and may only be changed thro
 
 Each skill is a single `SKILL.md` file with frontmatter (`name`, `description`) and a short instruction body.
 
-### `hooks/mode-guard.sh` — Mode Enforcement Hook
+### `hooks/` — Mode Enforcement and Notifications
 
-A `PreToolUse` hook that blocks `Edit` and `Write` tools whenever `.claude/.mode` contains `discuss`. This is what makes Discuss Mode actually unable to write code, rather than just asking Claude nicely.
+`mode-guard.sh` (macOS/Linux) and `mode-guard.ps1` (Windows) are `PreToolUse` hooks that block `Edit` and `Write` whenever `.claude/.mode` contains `discuss`. This is what makes Discuss Mode actually unable to write code, rather than just asking Claude nicely.
+
+`notify.ps1` (Windows only) raises a WinRT toast on `PermissionRequest` and `Stop`. It is the counterpart of the `osascript` calls used on macOS. Notification text lives inside the script rather than in `settings.json`, because the Windows console code page mangles non-ASCII arguments passed on the command line.
 
 ### `settings.json` — Hooks, Plugins, Notifications
 
-- Wires `mode-guard.sh` into `PreToolUse` for `Edit|Write`.
+- Wires the mode guard into `PreToolUse` for `Edit|Write`.
 - Auto-allows `Bash` while in Discuss Mode (read-only investigation is fine).
-- macOS notifications on `PermissionRequest` and `Stop` via `osascript`.
+- Fires a desktop notification on `PermissionRequest` and `Stop`.
 - Enables the `clangd-lsp` and `codex` plugins.
+
+## Branches
+
+`settings.json` and `CLAUDE.md` are platform-specific — hook commands, notifier, and the documented directory layout all differ per machine.
+
+- `main` — macOS
+- `windows` — Windows 11
+
+Shared content (`skills/`, `writing-style.md`, `LICENSE`) should be changed on `main` and merged forward into `windows`.
 
 ## Installation
 
-These files live in `~/.claude/` and are loaded by Claude Code automatically.
+These files live in the Claude Code config directory and are loaded automatically.
+
+**macOS / Linux**
 
 ```bash
 git clone <this-repo> ~/.claude
 chmod +x ~/.claude/hooks/mode-guard.sh
 ```
 
-If you already have a `~/.claude/` directory, merge selectively — at minimum copy `CLAUDE.md`, `skills/`, `hooks/`, and the `hooks` block from `settings.json`.
+**Windows**
 
-> The notification commands in `settings.json` are macOS-only (`osascript`). On Linux/Windows, replace them with your platform's notifier (e.g. `notify-send`).
+```powershell
+git clone -b windows <this-repo> $env:USERPROFILE\.claude
+```
+
+The Windows hooks are invoked as `powershell -NoProfile -ExecutionPolicy Bypass -File ...`, so no execution-policy change is needed. Absolute paths in `settings.json` assume `C:\Users\bsiku\.claude`; adjust them if the config directory lives elsewhere.
+
+If you already have a config directory, merge selectively — at minimum copy `CLAUDE.md`, `skills/`, `hooks/`, and the `hooks` block from `settings.json`.
 
 ## Usage
 
@@ -68,7 +87,7 @@ Other skills (`/think`, `/analysis`, `/challenge`, etc.) work in either mode and
 ## How the Mode Guard Works
 
 1. `.claude/.mode` holds either `discuss` or `normal` (or is absent, treated as `normal`).
-2. Before any `Edit` or `Write` tool call, `mode-guard.sh` reads the file. If the mode is `discuss`, it exits with code `2`, which Claude Code treats as a denied tool call.
+2. Before any `Edit` or `Write` tool call, the mode guard reads the file. If the mode is `discuss`, it exits with code `2`, which Claude Code treats as a denied tool call. The Windows guard tolerates a BOM, CRLF line endings, and mixed case, since `.mode` may be written by either Git Bash or PowerShell.
 3. `Bash` calls are explicitly allowed during Discuss Mode so Claude can still read, grep, and run diagnostics while you think.
 
 This keeps Discuss Mode honest: it is enforced by the harness, not by trusting the model to remember the rule.

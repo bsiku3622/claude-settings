@@ -13,6 +13,7 @@
 # Inside hooks/, keep scripts only.
 hooks/*
 !hooks/*.sh
+!hooks/*.ps1
 
 
 # Never commit local settings overrides.

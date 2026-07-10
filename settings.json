@@ -9,7 +9,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "~/.claude/hooks/mode-guard.sh"
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\bsiku\\.claude\\hooks\\mode-guard.ps1\""
           }
         ]
       }
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"확인이 필요합니다\" with title \"Claude Code\" sound name \"Ping\"'"
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\bsiku\\.claude\\hooks\\notify.ps1\" -Kind permission"
           }
         ]
       }
@@ -29,7 +29,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "osascript -e 'display notification \"작업이 완료되었습니다\" with title \"Claude Code\" sound name \"Glass\"'"
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\bsiku\\.claude\\hooks\\notify.ps1\" -Kind stop"
           }
         ]
       }
@@ -59,5 +59,6 @@
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "auto",
   "autoCompactEnabled": false,
-  "remoteControlAtStartup": true
+  "remoteControlAtStartup": true,
+  "autoUpdatesChannel": "latest"
 }

@@ -6,7 +6,7 @@
 - **호칭:** 평소엔 호칭을 생략하고, 부를 때는 "재원님"이라고 부름.
 - **소속:** KAIST 부설 한국과학영재학교 (KSA)
 - **작업 성격:** polyglot generalist. 단일 언어·프레임워크에 얽매이지 않고 문제에 맞는 도구를 선택하는 걸 선호함. 다양한 프로젝트를 진행하지만 특히 웹, AI, 디자인, 인프라, R&E 작업을 자주 진행함. 또한 일상적인 리서치, 철학 글쓰기, 과제 수행, 연구 보고서 작성 등도 진행함.
-- **운영체제:** Mac OS
+- **운영체제:** Windows 11 Pro. 기본 셸은 PowerShell 5.1이며, POSIX 스크립트가 필요하면 Git Bash를 쓸 수 있음.
 
 ---
 
@@ -20,23 +20,43 @@
 
 ## 사용자 디렉토리 구조
 
-### 홈 (~/)
-- `Personal/` — 개인 자료 및 작업용 소스 자료
-- `School/` — 학교별 자료 모음
-  - `KSA/` — 현재 재학중인 학교 자료
-- `Projects/` — 모든 개발 프로젝트
-- `Bufs/` — 임시 파일·스크래치 (날짜별 하위 폴더)
-- `Reports/` — 보고서 저장소
+사용자 데이터는 전부 **D 드라이브**에 있습니다. `C:\Users\bsiku`는 dotfile과 툴체인 설치본만 두는 곳이고, 작업 산출물을 여기에 만들지 않습니다.
 
-### Projects (~/Projects/)
-- `Main Projects/` — 핵심 프로젝트. 승격은 사용자가 직접 판단
-- `Side Projects/` — 토이 프로젝트·실험적 작업. 신규 프로젝트는 여기서 시작
-- `Archive/` — 비활성·구 프로젝트 모음
-- `Study/` — 프로그래밍 학습용 폴더
+Windows의 Desktop·Downloads·Documents·Pictures·Videos·Music은 전부 `D:\0_Personal\` 아래로 리다이렉트돼 있습니다. 즉 "다운로드 폴더"는 `C:\Users\bsiku\Downloads`가 아니라 `D:\0_Personal\Downloads`입니다. `C:\Users\bsiku\Downloads`는 껍데기만 남은 잔재이므로 읽지도 쓰지도 않습니다.
+
+### D 드라이브 루트
+- `D:\0_Personal\` — 개인 자료. Desktop·Downloads·Documents·Pictures·Videos·Musics의 실제 위치
+- `D:\1_Projects\` — 모든 개발 프로젝트
+- `D:\2_Works\` — 외주·업무 산출물
+- `D:\3_Sources\` — 작업용 소스 에셋 (`3D`, `Audios`, `Fonts`, `Images`, `Figma-Variables`)
+- `D:\5_Engineering\` — CAD 등 엔지니어링 파일
+- `D:\6_Installs\` — 설치 파일·SSH 키 보관
+- `D:\7_Temp\` — 임시 파일 영역
+
+### 프로젝트 (D:\1_Projects\)
+- `MainProjects\` — 핵심 프로젝트. 승격은 사용자가 직접 판단
+- `SideProjects\` — 토이 프로젝트·실험적 작업. 신규 프로젝트는 여기서 시작
+- `_archive\` — 비활성·구 프로젝트 모음
+- `Study\` — 프로그래밍 학습용 폴더
+- `Personal\` — 개인 운영 성격의 프로젝트 (데스크탑 관리, 마인크래프트 서버 등)
+- `School\KSA\` — 현재 재학중인 학교 자료
+
+### 보고서
+- `D:\0_Personal\Documents\Reports\` — `/save-report`의 저장소
 
 ### 임시 파일 관리
 
-임시 파일·스크래치·실험용 스크립트는 `~/Bufs/YYYY-MM-DD/` 아래에 저장합니다. Desktop, Downloads, 홈 디렉토리 루트에 임시 파일을 만들지 않습니다. 이는 Playwright 스크린샷 등도 마찬가지입니다. 작업이 끝나면 이번 작업에서 새로 만든 임시 파일은 기본적으로 정리합니다. 남길 가치가 있어 보이면 사용자에게 알리고 결정을 받습니다.
+임시 파일·스크래치·실험용 스크립트는 `D:\7_Temp\Buf\YYYY-MM-DD\` 아래에 저장합니다. 다음 위치에는 임시 파일을 만들지 않습니다.
+
+- `D:\0_Personal\Desktop\`, `D:\0_Personal\Downloads\` (및 이들의 C 드라이브 잔재 경로)
+- `C:\Users\bsiku\` 루트
+- D 드라이브 루트
+
+이는 Playwright 스크린샷 등도 마찬가지입니다. 작업이 끝나면 이번 작업에서 새로 만든 임시 파일은 기본적으로 정리합니다. 남길 가치가 있어 보이면 사용자에게 알리고 결정을 받습니다.
+
+### 경로 표기
+
+경로는 Windows 형식(`D:\1_Projects\...`)으로 씁니다. Bash 도구를 쓸 때만 Git Bash가 이해하는 형식(`/d/1_Projects/...` 또는 `D:/1_Projects/...`)으로 바꿉니다. 경로에 공백이나 한글이 섞이는 경우가 많으므로 항상 따옴표로 감쌉니다.
 
 ### 외부 도구 사용
 
@@ -86,4 +106,4 @@ Semantic Versioning (semver) 기반: `x.y.z` — 정식 릴리즈, `x.y.z-alpha`
 - **메타 표현 절제:** "물론입니다", "다음과 같습니다:", "정리하자면" 등은 실질 기능을 할 때만 사용합니다. 짧은 응답 앞에 reflex로 깔리면 AI 정형구가 됩니다.
 - **기술 용어:** 영어 그대로 쓰되 한국어 조사는 붙여 씁니다(`hook이`, `args를`).
 
-블로그·docs·랜딩페이지·학술 보고서·에세이·과제 리포트 등 긴 글을 작성할 때는 작업 시작 전 `~/.claude/writing-style.md`를 반드시 읽고 적용합니다.
+블로그·docs·랜딩페이지·학술 보고서·에세이·과제 리포트 등 긴 글을 작성할 때는 작업 시작 전 `C:\Users\bsiku\.claude\writing-style.md`를 반드시 읽고 적용합니다.
