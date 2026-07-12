@@ -22,33 +22,37 @@
 
 사용자 데이터는 전부 **D 드라이브**에 있습니다. `C:\Users\bsiku`는 dotfile과 툴체인 설치본만 두는 곳이고, 작업 산출물을 여기에 만들지 않습니다.
 
-Windows의 Desktop·Downloads·Documents·Pictures·Videos·Music은 전부 `D:\0_Personal\` 아래로 리다이렉트돼 있습니다. 즉 "다운로드 폴더"는 `C:\Users\bsiku\Downloads`가 아니라 `D:\0_Personal\Downloads`입니다. `C:\Users\bsiku\Downloads`는 껍데기만 남은 잔재이므로 읽지도 쓰지도 않습니다.
+Windows의 Desktop·Downloads·Documents·Pictures·Videos·Music은 전부 `D:\Home\` 아래로 리다이렉트돼 있습니다. 즉 "다운로드 폴더"는 `C:\Users\bsiku\Downloads`가 아니라 `D:\Home\Downloads`입니다. `C:\Users\bsiku\Downloads`는 껍데기만 남은 잔재이므로 읽지도 쓰지도 않습니다.
+
+전체 구조는 macOS 홈 디렉토리를 본떠 재편했습니다. 즉 `D:\` 루트가 맥의 `~/`에 대응하고, 번호 접두사 없이 영어 의미 이름을 씁니다.
 
 ### D 드라이브 루트
-- `D:\0_Personal\` — 개인 자료. Desktop·Downloads·Documents·Pictures·Videos·Musics의 실제 위치
-- `D:\1_Projects\` — 모든 개발 프로젝트
-- `D:\2_Works\` — 외주·업무 산출물
-- `D:\3_Sources\` — 작업용 소스 에셋 (`3D`, `Audios`, `Fonts`, `Images`, `Figma-Variables`)
-- `D:\5_Engineering\` — CAD 등 엔지니어링 파일
-- `D:\6_Installs\` — 설치 파일·SSH 키 보관
-- `D:\7_Temp\` — 임시 파일 영역
+- `D:\Home\` — Windows 특수폴더(Desktop·Documents·Downloads·Music·Pictures·Videos)의 실제 위치
+- `D:\Projects\` — 모든 개발 프로젝트
+- `D:\School\` — 학교(KSA) 자료
+- `D:\Personal\` — 개인 자료 (자격증·3D 프린팅·외주·아이콘 등)
+- `D:\Others\` — 타인(친구·협업자) 데이터 격리 보관
+- `D:\Installs\` — 수동 설치 툴체인·설치본
+- `D:\Reports\` — `/save-report` 산출물
+- `D:\Bufs\` — 임시 스크래치 (날짜별, `Claude Files\` 포함)
 
-### 프로젝트 (D:\1_Projects\)
-- `MainProjects\` — 핵심 프로젝트. 승격은 사용자가 직접 판단
-- `SideProjects\` — 토이 프로젝트·실험적 작업. 신규 프로젝트는 여기서 시작
-- `_archive\` — 비활성·구 프로젝트 모음
+### 프로젝트 (D:\Projects\)
+- `Main Projects\` — 핵심 프로젝트. 승격은 사용자가 직접 판단
+- `Side Projects\` — 토이 프로젝트·실험적 작업. 신규 프로젝트는 여기서 시작
 - `Study\` — 프로그래밍 학습용 폴더
-- `Personal\` — 개인 운영 성격의 프로젝트 (데스크탑 관리, 마인크래프트 서버 등)
-- `School\KSA\` — 현재 재학중인 학교 자료
+- `Scripts\` — 인프라 자동화·소형 스크립트 모음
+- `Archive\` — 비활성·구 프로젝트 모음
+
+학교 자료는 프로젝트가 아니라 최상위 `D:\School\KSA\` 아래에 학기별로 둡니다(코드성 과제 포함).
 
 ### 보고서
-- `D:\0_Personal\Documents\Reports\` — `/save-report`의 저장소
+- `D:\Reports\` — `/save-report`의 저장소
 
 ### 임시 파일 관리
 
-임시 파일·스크래치·실험용 스크립트는 `D:\7_Temp\Buf\YYYY-MM-DD\` 아래에 저장합니다. 다음 위치에는 임시 파일을 만들지 않습니다.
+임시 파일·스크래치·실험용 스크립트는 `D:\Bufs\Claude Files\YYYY-MM-DD\` 아래에 저장합니다. 다음 위치에는 임시 파일을 만들지 않습니다.
 
-- `D:\0_Personal\Desktop\`, `D:\0_Personal\Downloads\` (및 이들의 C 드라이브 잔재 경로)
+- `D:\Home\Desktop\`, `D:\Home\Downloads\` (및 이들의 C 드라이브 잔재 경로)
 - `C:\Users\bsiku\` 루트
 - D 드라이브 루트
 
@@ -56,7 +60,7 @@ Windows의 Desktop·Downloads·Documents·Pictures·Videos·Music은 전부 `D:\
 
 ### 경로 표기
 
-경로는 Windows 형식(`D:\1_Projects\...`)으로 씁니다. Bash 도구를 쓸 때만 Git Bash가 이해하는 형식(`/d/1_Projects/...` 또는 `D:/1_Projects/...`)으로 바꿉니다. 경로에 공백이나 한글이 섞이는 경우가 많으므로 항상 따옴표로 감쌉니다.
+경로는 Windows 형식(`D:\Projects\...`)으로 씁니다. Bash 도구를 쓸 때만 Git Bash가 이해하는 형식(`/d/Projects/...` 또는 `D:/Projects/...`)으로 바꿉니다. 경로에 공백이나 한글이 섞이는 경우가 많으므로 항상 따옴표로 감쌉니다.
 
 ### 외부 도구 사용
 

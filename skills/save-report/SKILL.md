@@ -1,6 +1,6 @@
 ---
 name: save-report
-description: Save a report as a Markdown file in D:\0_Personal\Documents\Reports.
+description: Save a report as a Markdown file in D:\Reports.
 ---
 
 **Usage:** /save-report [주제 또는 지시사항]
@@ -28,6 +28,6 @@ description: Save a report as a Markdown file in D:\0_Personal\Documents\Reports
 1. 보고서 본문을 작성합니다.
 2. 본문 제목에서 slug를 추출합니다.
 3. PowerShell 도구로 `Get-Date -Format "yyyy-MM-dd_HH-mm"` 을 실행해 현재 시각 prefix를 얻습니다.
-4. `D:\0_Personal\Documents\Reports\{prefix}-{slug}.md` 경로에 Write 도구로 저장합니다.
+4. `D:\Reports\{prefix}-{slug}.md` 경로에 Write 도구로 저장합니다.
 5. 동일 파일명이 이미 존재하면 `-2`, `-3` 식으로 suffix를 붙입니다.
 6. 저장 완료 후 절대 경로 한 줄로 결과를 알립니다.
