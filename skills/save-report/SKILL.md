@@ -14,6 +14,7 @@ description: Save a report as a Markdown file in D:\Reports.
 - 사실과 의견을 구분해서 서술
 - 필요 시 표, 코드 블록, 리스트 사용
 - 사용자가 요청한 주제에 집중하되, 관련된 중요한 정보나 배경도 포함
+- 수식은 LaTeX로 — 인라인은 `$...$`, 블록은 `$$...$$` (예: `$E=mc^2$`, `$$\int \sec x\,dx = \ln|\sec x+\tan x|+C$$`). 표·GFM과 함께 Report Viewer가 KaTeX로 렌더한다.
 
 ## 파일명 생성
 

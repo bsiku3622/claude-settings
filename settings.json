@@ -2,6 +2,7 @@
   "permissions": {
     "defaultMode": "default"
   },
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -54,7 +55,7 @@
     }
   },
   "language": "한국어",
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "auto",

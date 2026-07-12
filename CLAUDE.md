@@ -48,15 +48,11 @@ Windows의 Desktop·Downloads·Documents·Pictures·Videos·Music은 전부 `D:\
 ### 보고서
 - `D:\Reports\` — `/save-report`의 저장소
 
-### 임시 파일 관리
+### 파일 저장 위치
 
-임시 파일·스크래치·실험용 스크립트는 `D:\Bufs\Claude Files\YYYY-MM-DD\` 아래에 저장합니다. 다음 위치에는 임시 파일을 만들지 않습니다.
-
-- `D:\Home\Desktop\`, `D:\Home\Downloads\` (및 이들의 C 드라이브 잔재 경로)
-- `C:\Users\bsiku\` 루트
-- D 드라이브 루트
-
-이는 Playwright 스크린샷 등도 마찬가지입니다. 작업이 끝나면 이번 작업에서 새로 만든 임시 파일은 기본적으로 정리합니다. 남길 가치가 있어 보이면 사용자에게 알리고 결정을 받습니다.
+- **Claude 전용 임시 파일** (스크래치·중간 산출물·실험용 스크립트·Playwright 스크린샷 등): `D:\Bufs\Claude Files\YYYY-MM-DD\` 아래에 저장합니다. 작업이 끝나면 이번 작업에서 새로 만든 임시 파일은 기본적으로 정리합니다. 남길 가치가 있어 보이면 사용자에게 알리고 결정을 받습니다.
+- **사용자에게 전달하는 파일** (다운로드한 미디어, 생성한 문서, 변환 결과물 등): 별도 지시가 없으면 `D:\Home\Downloads\`에 저장합니다.
+- 다음 위치에는 파일을 만들지 않습니다: `D:\Home\Desktop\`, `C:\Users\bsiku\` 루트, D 드라이브 루트. 이들의 C 드라이브 잔재 경로도 마찬가지입니다.
 
 ### 경로 표기
 
