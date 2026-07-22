@@ -14,26 +14,6 @@
           }
         ]
       }
-    ],
-    "PermissionRequest": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"확인이 필요합니다\" with title \"Claude Code\" sound name \"Ping\"'"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "osascript -e 'display notification \"작업이 완료되었습니다\" with title \"Claude Code\" sound name \"Glass\"'"
-          }
-        ]
-      }
     ]
   },
   "worktree": {
@@ -44,8 +24,7 @@
     "codex@openai-codex": true,
     "frontend-design@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "swift-lsp@claude-plugins-official": true
+    "context7@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {

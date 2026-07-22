@@ -31,27 +31,39 @@ Each skill is a single `SKILL.md` file with frontmatter (`name`, `description`) 
 
 ### `hooks/mode-guard.sh` — Mode Enforcement Hook
 
-A `PreToolUse` hook that blocks `Edit` and `Write` tools whenever `.claude/.mode` contains `discuss`. This is what makes Discuss Mode actually unable to write code, rather than just asking Claude nicely.
+A `PreToolUse` hook that blocks `Edit` and `Write` whenever `.claude/.mode` contains `discuss`. This is what makes Discuss Mode actually unable to write code, rather than just asking Claude nicely.
 
-### `settings.json` — Hooks, Plugins, Notifications
+### `settings.json` — Hooks and Plugins
 
 - Wires `mode-guard.sh` into `PreToolUse` for `Edit|Write`.
 - Auto-allows `Bash` while in Discuss Mode (read-only investigation is fine).
-- macOS notifications on `PermissionRequest` and `Stop` via `osascript`.
 - Enables the `clangd-lsp` and `codex` plugins.
+- No desktop-notification hooks: this is a headless server, so the macOS `osascript` notifications from `main` are dropped rather than replaced.
+
+## Branches
+
+`settings.json` and `CLAUDE.md` are platform-specific — hook commands, notifier, and the documented directory layout all differ per machine.
+
+- `main` — macOS
+- `windows` — Windows 11
+- `ubuntu-server` — Ubuntu 22.04 server (headless, nginx + systemd host)
+
+Shared content (`skills/`, `writing-style.md`, `LICENSE`) should be changed on `main` and merged forward.
 
 ## Installation
 
 These files live in `~/.claude/` and are loaded by Claude Code automatically.
 
+**Ubuntu server**
+
 ```bash
-git clone <this-repo> ~/.claude
-chmod +x ~/.claude/hooks/mode-guard.sh
+git clone -b ubuntu-server <this-repo> ~/.claude
+chmod +x ~/.claude/hooks/*.sh
 ```
 
-If you already have a `~/.claude/` directory, merge selectively — at minimum copy `CLAUDE.md`, `skills/`, `hooks/`, and the `hooks` block from `settings.json`.
+The `CLAUDE.md` on this branch documents a headless host laid out around `/srv`, `/etc/nginx`, `/etc/wireguard`, and systemd units rather than a personal home directory. Hooks are referenced by `~/.claude/...` so no absolute-path edits are needed.
 
-> The notification commands in `settings.json` are macOS-only (`osascript`). On Linux/Windows, replace them with your platform's notifier (e.g. `notify-send`).
+If you already have a `~/.claude/` directory, merge selectively — at minimum copy `CLAUDE.md`, `skills/`, `hooks/`, and the `hooks` block from `settings.json`.
 
 ## Usage
 
