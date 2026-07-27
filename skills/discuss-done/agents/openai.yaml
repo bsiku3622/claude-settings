@@ -1,0 +1,4 @@
+interface:
+  display_name: "Exit Discuss Mode"
+  short_description: "Discuss Mode를 끝내고 일반 작업 모드로 돌아갑니다"
+  default_prompt: "Use $discuss-done to exit Discuss Mode without starting implementation."

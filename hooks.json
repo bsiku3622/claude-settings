@@ -1,0 +1,17 @@
+{
+  "description": "Personal Codex workflow hooks.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/baeks/.codex/hooks/mode-guard.sh",
+            "statusMessage": "Checking Discuss Mode"
+          }
+        ]
+      }
+    ]
+  }
+}

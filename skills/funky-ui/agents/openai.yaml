@@ -1,0 +1,4 @@
+interface:
+  display_name: "funky-ui"
+  short_description: "funky-ui 디자인 시스템의 컴포넌트와 토큰을 적용합니다"
+  default_prompt: "Use $funky-ui to build this interface with the funky-ui design system."

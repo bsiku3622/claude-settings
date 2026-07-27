@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Brief"
+  short_description: "현재 세션을 다음 대화용 구조화 브리프로 요약합니다"
+  default_prompt: "Use $brief to summarize this session for the next Codex chat."

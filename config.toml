@@ -1,0 +1,38 @@
+model = "gpt-5.6-sol"
+model_reasoning_effort = "xhigh"
+approvals_reviewer = "user"
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[features]
+multi_agent = true
+
+[projects."/Users/baeks/Projects/Main Projects/simulizer/frontend"]
+trust_level = "trusted"
+
+[projects."/Users/baeks"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Documents/Personal/School/KSA/2026-1/철학"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Projects/Main Projects/design-systems/studio-ui"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Projects/Main Projects/design-systems"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Projects/Main Projects/simulizer"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Downloads"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Projects/Side Projects/design-systems"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+"gpt-5.6-sol" = 1

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Discuss Mode"
+  short_description: "구현을 멈추고 요구사항과 선택지를 깊게 논의합니다"
+  default_prompt: "Use $discuss to enter Discuss Mode for this topic."

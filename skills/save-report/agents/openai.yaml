@@ -1,0 +1,4 @@
+interface:
+  display_name: "Save Report"
+  short_description: "현재 주제를 한국어 Markdown 보고서로 작성해 저장합니다"
+  default_prompt: "Use $save-report to write and save a Markdown report about this topic."

@@ -1,22 +1,40 @@
-# Allow-list approach: ignore everything, then unignore what we share.
+# Allow-list approach: ignore all Codex runtime state, then share only config.
 /*
 !/.gitignore
-!/CLAUDE.md
-!/language-style.md
+!/AGENTS.md
+!/README.md
+!/LICENSE
+!/config.toml
 !/writing-style.md
-!/settings.json
-!/skills/
+!/hooks.json
 !/hooks/
-!README.md
-!LICENSE
+!/rules/
+!/skills/
 
-# Inside hooks/, keep scripts only.
+# Lifecycle hooks.
 hooks/*
 !hooks/*.sh
 
+# Command approval rules.
+rules/*
+!rules/*.rules
 
-# Never commit local settings overrides.
-settings.local.json
+# Personal skills only; bundled and plugin skills stay local.
+skills/*
+!skills/brief/
+!skills/discuss/
+!skills/discuss-done/
+!skills/explain/
+!skills/funky-ui/
+!skills/save-report/
+!skills/studio-baeks-ppt/
 
-# OS / editor noise
+skills/*/*
+!skills/*/SKILL.md
+!skills/*/agents/
+
+skills/*/agents/*
+!skills/*/agents/openai.yaml
+
+# OS / editor noise.
 .DS_Store

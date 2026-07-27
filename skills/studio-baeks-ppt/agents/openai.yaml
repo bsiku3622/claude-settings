@@ -1,0 +1,4 @@
+interface:
+  display_name: "Studio Baeks PPT"
+  short_description: "Studio Baeks PPT Engine용 Markdown 슬라이드를 작성합니다"
+  default_prompt: "Use $studio-baeks-ppt to create a presentation deck for this topic."

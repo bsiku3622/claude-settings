@@ -5,7 +5,7 @@ description: funky-ui 디자인 시스템 가이드. Neo-brutalist 정체성 (�
 
 # funky-ui — Design System Skill
 
-`@studio-baeks/funky-ui` 로 UI를 만들 때 정확한 컴포넌트·prop·토큰 정보를 가져오는 skill. 모든 docs는 배포 사이트에서 raw markdown으로 노출되며 WebFetch로 접근한다.
+`@studio-baeks/funky-ui` 로 UI를 만들 때 정확한 컴포넌트·prop·토큰 정보를 가져오는 skill. 모든 docs는 배포 사이트에서 raw markdown으로 노출되며 web fetch/browse로 접근한다.
 
 ## When to use
 
@@ -105,7 +105,7 @@ https://funky-ui.bsiku.dev/docs/api/components/templates.md    # AppShell·ToolS
 ### Pattern 2 — prop 시그니처만 확인
 
 ```
-WebFetch https://funky-ui.bsiku.dev/docs/api/components/{atoms|components|templates}.md
+web fetch https://funky-ui.bsiku.dev/docs/api/components/{atoms|components|templates}.md
 ```
 
 각 컴포넌트는 lead → 코드 예시 → prop 테이블 구조.
@@ -113,7 +113,7 @@ WebFetch https://funky-ui.bsiku.dev/docs/api/components/{atoms|components|templa
 ### Pattern 3 — 토큰 값 참조
 
 ```
-WebFetch https://funky-ui.bsiku.dev/docs/api/foundations/tokens.md
+web fetch https://funky-ui.bsiku.dev/docs/api/foundations/tokens.md
 ```
 
 색(크림 surface + 네온 8색 + accent variant), 하드 그림자, font role, sizing ladder, 모션의 정확한 값.

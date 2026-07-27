@@ -6,7 +6,7 @@ description: Studio Baeks PPT Engine으로 1920×1080 HTML 슬라이드 데크�
 # Studio Baeks PPT Engine — Slide Authoring Skill (v2)
 
 > 이 파일은 **두 가지 방법**으로 사용 가능:
-> 1. **Claude Code skill** — `~/.claude/skills/studio-baeks-deck/SKILL.md`로 떨어뜨리면 `/studio-baeks-deck` 호출 또는 자동 발동
+> 1. **Codex skill** — `~/.codex/skills/studio-baeks-ppt/SKILL.md`로 저장하면 `/studio-baeks-ppt` 호출 또는 자동 발동
 > 2. **일반 시스템 프롬프트** — ChatGPT/Cursor/Claude.ai 등에 본문 통째로 붙여넣기 (frontmatter는 무시되지만 작동에 영향 없음)
 
 ---

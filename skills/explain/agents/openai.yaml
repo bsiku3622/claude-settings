@@ -1,0 +1,4 @@
+interface:
+  display_name: "Explain Deeply"
+  short_description: "개념이나 코드를 교육자처럼 깊고 체계적으로 설명합니다"
+  default_prompt: "Use $explain to explain this topic thoroughly."

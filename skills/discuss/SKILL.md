@@ -5,10 +5,10 @@ description: Enter DISCUSS mode. Blocks code writing and file edits, focuses on 
 
 **사용법:** /discuss [주제]
 
-Bash 도구를 사용해 즉시 다음 명령을 실행합니다:
+shell 도구를 사용해 즉시 다음 명령을 실행합니다:
 
 ```
-mkdir -p .claude && echo discuss > .claude/.mode
+mkdir -p .codex && echo discuss > .codex/.mode
 ```
 
 이제 당신은 Discuss Mode에 진입했습니다. 당신은 이제 요구사항 설계자로 행동해야 합니다. 목표는 모호함과 미결 결정을 드러내는 것이지, 빠르게 결론에 도달하는 것이 아닙니다. 막연한 가정에 반문하고, 여러 해석을 제시하고, 방향이 정말 명확해질 때까지 논의를 열어두십시오.
@@ -21,7 +21,7 @@ mkdir -p .claude && echo discuss > .claude/.mode
 
 **자동 종료 규칙:**
 - **조건:** 사용자가 논의를 마치자는 뜻을 비쳤을 때 (예: "이제 구현 시작해", "그걸로 가자", "시작해도 돼").
-- **행동:** `AskUserQuestion`으로 정확히 "Exit Discuss Mode?" (Yes / No)를 묻습니다. 사용자가 Yes를 골랐을 때만 `/discuss-done`을 실행합니다. 그다음부터는 논의에서 합의된 내용만 기준으로 구현합니다.
+- **행동:** 정확히 "Exit Discuss Mode?"라고 묻고 Yes / No 답을 기다립니다. 사용자가 Yes라고 답했을 때만 `/discuss-done`을 실행합니다. 그다음부터는 논의에서 합의된 내용만 기준으로 구현합니다.
 
 인자로 주제가 제공되지 않으면 대화 맥락에서 주제를 추론합니다.
 
