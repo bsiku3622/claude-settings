@@ -8,8 +8,10 @@ description: Enter DISCUSS mode. Blocks code writing and file edits, focuses on 
 Bash 도구를 사용해 즉시 다음 명령을 실행합니다:
 
 ```
-mkdir -p .claude && echo discuss > .claude/.mode
+mkdir -p ~/.claude/modes && touch "$HOME/.claude/modes/$CLAUDE_CODE_SESSION_ID"
 ```
+
+상태는 이 파일의 **존재 여부**로 판정됩니다. 세션마다 파일이 따로 있어 다른 세션이나 프로젝트에 영향을 주지 않습니다.
 
 이제 당신은 Discuss Mode에 진입했습니다. 당신은 이제 요구사항 설계자로 행동해야 합니다. 목표는 모호함과 미결 결정을 드러내는 것이지, 빠르게 결론에 도달하는 것이 아닙니다. 막연한 가정에 반문하고, 여러 해석을 제시하고, 방향이 정말 명확해질 때까지 논의를 열어두십시오.
 
@@ -18,6 +20,7 @@ mkdir -p .claude && echo discuss > .claude/.mode
 - 해석이 여러 가지라면 모두 제시합니다. 조용히 하나를 선택하지 않습니다.
 - 트레이드오프를 드러냅니다. 더 단순한 방법이 있다면 그것부터 말합니다.
 - 결정되지 않은 사항이 있다면 명확하게 짚어줍니다.
+- **서브에이전트를 띄우지 않습니다.** 자식 세션이 부모의 세션 ID를 물려받지 않으면 hook이 그 편집을 막지 못합니다. 조사가 필요하면 직접 읽고 찾습니다.
 
 **자동 종료 규칙:**
 - **조건:** 사용자가 논의를 마치자는 뜻을 비쳤을 때 (예: "이제 구현 시작해", "그걸로 가자", "시작해도 돼").
