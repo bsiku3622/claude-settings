@@ -1,6 +1,7 @@
-model = "gpt-5.6-sol"
-model_reasoning_effort = "xhigh"
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
 approvals_reviewer = "user"
+project_doc_fallback_filenames = ["CLAUDE.md"]
 
 [mcp_servers.context7]
 command = "npx"
@@ -33,6 +34,34 @@ trust_level = "trusted"
 [projects."/Users/baeks/Projects/Side Projects/design-systems"]
 trust_level = "trusted"
 
+[projects."/Users/baeks/Projects/Side Projects/SweetZamong"]
+trust_level = "trusted"
+
+[projects."/Users/baeks/Projects/Main Projects"]
+trust_level = "trusted"
+
 [tui.model_availability_nux]
 "gpt-5.5" = 4
 "gpt-5.6-sol" = 1
+gpt-6-astra = 4
+
+[hooks.state]
+
+[hooks.state."/Users/baeks/.codex/hooks.json:pre_tool_use:0:0"]
+trusted_hash = "sha256:d34fc579484ab58656ca1939af19ff8537c2b4d4d2349954c040081c8a60ae11"
+
+[hooks.state."/Users/baeks/.codex/hooks.json:permission_request:0:0"]
+trusted_hash = "sha256:4a917ccb5a132022641265311127f9f4be4ac14cce5ba34b8a1f8926973ba938"
+
+[hooks.state."/Users/baeks/.codex/hooks.json:stop:0:0"]
+trusted_hash = "sha256:18fdbad99eeb5e6d578fda5d3fb4c0a2ddbf5cfc8dea4f09b7bb9018a9cb6785"
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@latest"]
+
+[mcp_servers.playwright.tools.browser_navigate]
+approval_mode = "approve"
+
+[mcp_servers.playwright.tools.browser_click]
+approval_mode = "approve"

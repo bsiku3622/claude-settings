@@ -12,6 +12,28 @@
           }
         ]
       }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/baeks/.codex/hooks/notify.sh permission",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/baeks/.codex/hooks/notify.sh stop",
+            "timeout": 5
+          }
+        ]
+      }
     ]
   }
 }

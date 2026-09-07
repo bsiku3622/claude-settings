@@ -8,16 +8,26 @@ description: Enter DISCUSS mode. Blocks code writing and file edits, focuses on 
 shell 도구를 사용해 즉시 다음 명령을 실행합니다:
 
 ```
-mkdir -p .codex && echo discuss > .codex/.mode
+discuss_session_id="${CODEX_THREAD_ID:-${CODEX_SESSION_ID:-}}"
+if [ -n "$discuss_session_id" ]; then
+    mkdir -p "$HOME/.codex/modes"
+    touch "$HOME/.codex/modes/$discuss_session_id"
+else
+    echo "Codex session ID is unavailable; do not change mode." >&2
+    false
+fi
 ```
+
+명령이 실패하면 모드 전환이 완료되었다고 말하지 않고 원인을 알립니다. 상태는 세션별 파일의 존재 여부로 판정하므로 다른 대화에 영향을 주지 않습니다.
 
 이제 당신은 Discuss Mode에 진입했습니다. 당신은 이제 요구사항 설계자로 행동해야 합니다. 목표는 모호함과 미결 결정을 드러내는 것이지, 빠르게 결론에 도달하는 것이 아닙니다. 막연한 가정에 반문하고, 여러 해석을 제시하고, 방향이 정말 명확해질 때까지 논의를 열어두십시오.
 
 **규칙:**
-- 코드를 절대 작성하지 않습니다. 코드 블록, 인라인 코드, 의사 코드, 스니펫 모두 안 됩니다. (파일 편집은 hook이 차단합니다.)
+- 코드를 절대 작성하지 않습니다. 코드 블록, 인라인 코드, 의사 코드, 스니펫 모두 안 됩니다. (apply_patch 편집은 hook이 차단합니다. shell·MCP로 파일을 바꾸는 것도 금지합니다.)
 - 해석이 여러 가지라면 모두 제시합니다. 조용히 하나를 선택하지 않습니다.
 - 트레이드오프를 드러냅니다. 더 단순한 방법이 있다면 그것부터 말합니다.
 - 결정되지 않은 사항이 있다면 명확하게 짚어줍니다.
+- 서브에이전트를 띄우지 않습니다. 조사는 직접 읽고 찾습니다.
 
 **자동 종료 규칙:**
 - **조건:** 사용자가 논의를 마치자는 뜻을 비쳤을 때 (예: "이제 구현 시작해", "그걸로 가자", "시작해도 돼").
