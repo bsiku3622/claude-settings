@@ -1,21 +1,27 @@
 #Requires -Version 5.1
-# PreToolUse hook: blocks Edit/Write while .claude/.mode contains "discuss".
-# Windows counterpart of mode-guard.sh. Exit code 2 = denied tool call.
+# PreToolUse hook: blocks Edit/Write while DISCUSS mode is active for this session.
+# Windows counterpart of mode-guard.sh.
+#
+# State is judged by the EXISTENCE of "$env:USERPROFILE\.claude\modes\<session id>".
+# Content is not read. discuss-done removes the file, so most sessions leave no trace.
+#
+# If the session id can't be determined, the hook passes (fail-open): Discuss Mode
+# is a mistake-prevention guardrail, not a security boundary, so blocking normal
+# work on an indeterminate state is worse than letting it through.
 
-$root = if ($env:CLAUDE_PROJECT_DIR) { $env:CLAUDE_PROJECT_DIR } else { (Get-Location).Path }
-$modeFile = Join-Path $root '.claude\.mode'
+$sid = $env:CLAUDE_CODE_SESSION_ID
 
-$mode = 'normal'
-if (Test-Path -LiteralPath $modeFile -PathType Leaf) {
-    $raw = Get-Content -LiteralPath $modeFile -Raw -ErrorAction SilentlyContinue
-    if ($raw) {
-        # Tolerate a UTF-8/UTF-16 BOM and any trailing newline written by echo.
-        $mode = $raw.Trim([char]0xFEFF, [char]0xFFFE, ' ', "`t", "`r", "`n").ToLowerInvariant()
+if (-not $sid) {
+    $stdin = [Console]::In.ReadToEnd()
+    if ($stdin -match '"session_id"\s*:\s*"([^"]*)"') {
+        $sid = $Matches[1]
     }
 }
 
-if ($mode -eq 'discuss') {
-    [Console]::Error.WriteLine('Cannot edit files in Discuss Mode - use /discuss-done to exit.')
-    exit 2
-}
-exit 0
+if (-not $sid) { exit 0 }
+
+$modeFile = Join-Path $env:USERPROFILE ".claude\modes\$sid"
+if (-not (Test-Path -LiteralPath $modeFile -PathType Leaf)) { exit 0 }
+
+[Console]::Error.WriteLine('Cannot edit files in Discuss Mode - use /discuss-done to exit.')
+exit 2
