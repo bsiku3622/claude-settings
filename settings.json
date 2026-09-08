@@ -2,7 +2,6 @@
   "permissions": {
     "defaultMode": "default"
   },
-  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -56,10 +55,10 @@
   },
   "language": "한국어",
   "effortLevel": "xhigh",
+  "autoUpdatesChannel": "latest",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "auto",
   "autoCompactEnabled": false,
-  "remoteControlAtStartup": true,
-  "autoUpdatesChannel": "latest"
+  "remoteControlAtStartup": true
 }
