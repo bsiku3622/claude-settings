@@ -1,5 +1,4 @@
 {
-  "description": "Personal Codex workflow hooks.",
   "hooks": {
     "PreToolUse": [
       {
@@ -7,8 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/baeks/.codex/hooks/mode-guard.sh",
-            "statusMessage": "Checking Discuss Mode"
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\bsiku\\.codex\\hooks\\mode-guard.ps1\""
           }
         ]
       }
@@ -18,8 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/baeks/.codex/hooks/notify.sh permission",
-            "timeout": 5
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\bsiku\\.codex\\hooks\\notify.ps1\" -Kind permission"
           }
         ]
       }
@@ -29,8 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/baeks/.codex/hooks/notify.sh stop",
-            "timeout": 5
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\bsiku\\.codex\\hooks\\notify.ps1\" -Kind stop"
           }
         ]
       }
