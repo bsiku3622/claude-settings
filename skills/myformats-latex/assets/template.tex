@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+
+\usepackage{kotex}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{cite}
+\usepackage{indentfirst}
+
+\geometry{a4paper, margin=2.5cm}
+\hypersetup{hidelinks}
+
+\captionsetup*[figure]{name=Fig., labelsep=period, font=small,
+  justification=justified, singlelinecheck=false}
+\captionsetup*[table]{name=Table, labelsep=period, font=small,
+  justification=centering, singlelinecheck=false}
+
+% Keep only the statement types used by the document.
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\renewcommand{\proofname}{Proof}
+
+\title{보고서 제목:\\
+필요한 경우 부제목}
+\author{25-059 백재원}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% Add an abstract only for a research-style document or when requested.
+% \begin{abstract}
+% 초록을 작성한다.
+% \end{abstract}
+
+% Add a separate Contents page only when it helps navigate a long document.
+% \newpage
+% \renewcommand{\contentsname}{Contents}
+% \tableofcontents
+% \newpage
+
+\section{Introduction}
+
+본문을 작성한다.
+
+% Use an external .bib file when references are needed.
+% \bibliographystyle{IEEEtran}
+% \bibliography{references}
+
+\end{document}
