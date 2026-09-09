@@ -29,10 +29,14 @@ skills/*
 !skills/frontend-design/
 !skills/save-report/
 !skills/studio-baeks-ppt/
+!skills/myformats-latex/
 
 skills/*/*
 !skills/*/SKILL.md
 !skills/*/agents/
+
+!skills/myformats-latex/assets/
+!skills/myformats-latex/assets/template.tex
 
 skills/*/agents/*
 !skills/*/agents/openai.yaml

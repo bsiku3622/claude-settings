@@ -1,0 +1,4 @@
+interface:
+  display_name: "My LaTeX Format"
+  short_description: "기본 LaTeX 관례로 보고서와 논문을 일관되게 조판합니다"
+  default_prompt: "Use $myformats-latex to create a clean LaTeX report and compiled PDF."
