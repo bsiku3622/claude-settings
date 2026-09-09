@@ -47,6 +47,10 @@ DISCUSS 모드 상태 파일(`~/.claude/modes/<세션 ID>`)은 반드시 `/discu
 
 WebSearch, WebFetch, Playwright는 사전 확인이나 의도 설명 없이 자유롭게 호출해도 됩니다.
 
+### LaTeX 문서
+
+LaTeX 문서를 새로 작성하거나 기존 LaTeX 문서의 양식·조판을 수정할 때는 반드시 `myformats-latex` skill을 읽고 그 양식을 따릅니다. 과제 안내나 사용자의 명시적 형식 요구가 있으면 그것을 우선합니다.
+
 ### 구현 규칙
 
 - 요청받거나 논의에서 합의한 내용만 구현합니다.

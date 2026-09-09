@@ -11,7 +11,7 @@ For a new document, start from [assets/template.tex](assets/template.tex) and re
 
 ## Baseline
 
-- Use `\documentclass[11pt]{article}`, A4 paper, and `margin=2.5cm` unless the assignment specifies otherwise.
+- Use `\documentclass[11pt,titlepage]{article}`, A4 paper, and `margin=2.5cm` unless the assignment specifies otherwise. The `titlepage` option is required so the first physical page remains a title-only page.
 - For a new Korean or mixed Korean–English document, default to pdfLaTeX with `kotex`. Preserve XeLaTeX or LuaLaTeX when the existing project requires it, but do not introduce `fontspec` or custom fonts merely for appearance.
 - Use the default Computer Modern/Latin Modern family and the default serif Korean font supplied through `kotex`.
 - Use `\hypersetup{hidelinks}`. Keep the default centered page number.
@@ -23,8 +23,8 @@ For a new document, start from [assets/template.tex](assets/template.tex) and re
 - Use `\title`, `\author`, `\date`, and `\maketitle`; do not reconstruct the title block manually without a required format.
 - For Jaewon's Korean school submission, default to `\author{25-059 백재원}`. For a team, write entries such as `25-059 백재원 \quad / \quad 25-008 김가온`. For an English research paper, use `Jaewon Baek` unless another author form is supplied.
 - Use the supplied submission date. If none is supplied, use `\today` during drafting; replace it with an explicit date for a final reproducible submission when appropriate.
-- A short assignment or lab report should begin its first section immediately after `\maketitle`; do not force a separate cover, Abstract, or Contents page.
-- Add an Abstract only for research-style documents or when requested. Add Contents only when it materially helps navigate a long document. For a long paper with both, place title and Abstract on page 1, Contents on the next page, then begin the body on a new page.
+- Always reserve the first physical page for the standard title block only, even when the document has no Abstract. Put no Abstract, Contents, summary box, institution footer, or body text on that page.
+- Add an Abstract only for research-style documents or when requested, and begin it after the title page. Add Contents only when it materially helps navigate a long document. Without either, begin the first body section on the page immediately after `\maketitle`.
 - Do not place an institution line or other decorative metadata at the bottom of the title page unless required.
 
 ## Structure and Mathematical Statements
